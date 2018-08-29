@@ -21,6 +21,9 @@
 
 - name: Restart Nginx
   service: name=nginx state=restarted enabled=yes
+  ignore_errors: yes
 
 - name: Ensure Nginx is running
   service: name=nginx state=started enabled=yes
+  ignore_errors: yes
+
