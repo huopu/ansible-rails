@@ -1,0 +1,7 @@
+# nodejs && yarn
+nodejs_version: "8.x"
+nodejs_npm_global_packages:
+  - name: yarn
+    version: 1.7.0
+
+

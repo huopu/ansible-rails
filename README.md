@@ -102,3 +102,12 @@ server 'your_host_address', user: 'deploy', roles: %w{app db web}
 ## Feedback
 
 Feel free to send feedback or report problems via GitHub issues!
+
+
+## 命令
+
+- `ansible-galaxy install zzet.rbenv` 安装 rbenv playbook
+- `ansible-galaxy install geerlingguy.nodejs` 安装 nodejs playbook, 包含 yarn
+- Run ```ansible-playbook common.yml -i hosts```.
+- Run ```ansible-playbook site.yml -i hosts```.
+

@@ -1,17 +1,11 @@
 # Install python and aptitude on the target machines (apt-get install python aptitude)
 # Copy ssh public key to machines (ssh-copy-id user@host)
 ---
-- name: Install Rails Server
+- name: Set up base environment.
   hosts: webservers
   # After initial provisioning, use deploy instead of root
-  # remote_user: root
-  remote_user: deploy
-  become: yes
-  become_method: sudo
-  # gather_facts: no # don't gather facts because /usr/bin/python isn't set ( rbenv 和 nodejs 影响 gather_facts )
-  vars_files: 
-    - vars/nodejs.yml
-    - vars/rbenv.yml
+  remote_user: root
+  gather_facts: no # don't gather facts because /usr/bin/python isn't set
   pre_tasks:
     - name: apt-get update
       raw: apt-get update -qq
@@ -20,16 +14,5 @@
     - name: set python 2.7 as default
       raw: update-alternatives --install /usr/bin/python python /usr/bin/python2.7 1
   roles:
-    # - common
-    # - deploy-user
-    # - mysql
-    # - nginx
-    # - certbot
-    - geerlingguy.nodejs
-    # - zzet.rbenv
-    # - ruby
-    # - rails
-    # - monit
-    # - memcached
-    # - redis
-    # - elasticsearch
+    - common
+    - deploy-user
