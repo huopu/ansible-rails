@@ -111,3 +111,5 @@ Feel free to send feedback or report problems via GitHub issues!
 - Run ```ansible-playbook common.yml -i hosts```.
 - Run ```ansible-playbook site.yml -i hosts```.
 
+
+使用 yarn playbook 之后, yanr 的目录 cap 找不到; 需要做个软链: `sudo ln -s /usr/local/lib/npm/lib/node_modules/yarn/bin/yarn.js /usr/bin/yarn`

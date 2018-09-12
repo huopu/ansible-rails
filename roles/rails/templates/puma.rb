@@ -11,6 +11,7 @@ environment 'production'
 threads {{ puma_threads }}
 workers {{ puma_workers }}
 
+daemonize
 preload_app!
 prune_bundler
 
